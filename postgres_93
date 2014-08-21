@@ -94,15 +94,15 @@ fi
 case "$1" in
 'start')
         check_data_dir
-        su - postgres -c "$PGBIN/pg_ctl -D $PGDATA -l $PGDATA/$PGLOG start"
+        $PGBIN/pg_ctl -D $PGDATA -l $PGDATA/$PGLOG start
         ;;
 
 'stop')
-        su - postgres -c "$PGBIN/pg_ctl -D $PGDATA stop"
+        $PGBIN/pg_ctl -D $PGDATA stop
         ;;
 
 'refresh')
-        su - postgres -c "$PGBIN/pg_ctl -D $PGDATA reload"
+        $PGBIN/pg_ctl -D $PGDATA reload
         ;;
 
 *)
